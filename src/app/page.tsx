@@ -33,7 +33,8 @@ export default function ComparePage() {
   const [error, setError] = useState<string | null>(null);
   const [sortMetric, setSortMetric] = useState<SortMetric>("averageSimilarity");
   const [sortAsc, setSortAsc] = useState(false);
-  const query = "comfrt"; // or make it dynamic
+  const query = "comfrt"; // NOTE - hard-coded query for demonstration
+  const pageCount = 10; // NOTE - hard-coded page count for demonstration
 
   const handleClick = async (imgUrl: string) => {
     setSelectedImage(imgUrl);
@@ -43,7 +44,7 @@ export default function ComparePage() {
 
     try {
       const res = await fetch(
-        `/api/compare?q=${encodeURIComponent(query)}&imageUrl=${encodeURIComponent(imgUrl)}&pages=2`
+        `/api/compare?q=${encodeURIComponent(query)}&imageUrl=${encodeURIComponent(imgUrl)}&pages=${pageCount}`
       );
       const data = await res.json();
 

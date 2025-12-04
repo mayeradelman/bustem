@@ -34,9 +34,9 @@ async function compareResults(imageUrl: string, results: any[]) {
 export async function GET(req: NextRequest) {
   try {
     const url = new URL(req.url);
-    const imageUrl = url.searchParams.get("imageUrl") || url.searchParams.get("image_url");
-    const q = url.searchParams.get("q") || url.searchParams.get("query");
-    const pages = Number(url.searchParams.get("pages") || 1);
+    const imageUrl = url.searchParams.get("imageUrl");
+    const q = url.searchParams.get("q");
+    const pages = Number(url.searchParams.get("pages") || 1); // default to 1 page
 
     if (!q) return jsonResponse({ error: 'Missing query "q"' }, 400);
     if (!imageUrl) return jsonResponse({ error: 'Missing imageUrl' }, 400);

@@ -5,8 +5,8 @@ import { jsonResponse } from '../utils';
 
 export async function GET(req: NextRequest) {
   const url = new URL(req.url);
-  const query = url.searchParams.get('q') || url.searchParams.get('query');
-  const pages = Number(url.searchParams.get('pages') || 1);
+  const query = url.searchParams.get('q');
+  const pages = Number(url.searchParams.get('pages') || 1); // default to 1 page
 
   if (!query) {
     return jsonResponse({ error: 'Missing query "q"' }, 400);
