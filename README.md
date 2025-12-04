@@ -1,7 +1,7 @@
 ## Improving Counterfeit Detection Accuracy
 - Remove noise - try to isolate the main product in the image by cropping out the model, background, and other irrelevant details.
 - Focus on branding elements (logos, tags, unique patterns)
--
+- Compare product names and descriptions alongside images
 
 ## Scalable Backend Design
 
